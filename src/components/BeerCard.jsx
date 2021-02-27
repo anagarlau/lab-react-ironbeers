@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import Header from './Header'
 class BeerCard extends React.Component{
     constructor(props){
         super(props)
@@ -19,12 +20,14 @@ class BeerCard extends React.Component{
     }
 
      render(){
-        
+       
         if(this.state.beer === null) return (<h1> Loading...</h1>) 
         return (
+            <div className='container'> 
+            <Header />
             <div className="card" style={{width: '28rem'}}>
             <Link to={"/beers"}> Go back to beers </Link>
-                <img style={{width:'4rem'}} className="card-img-top" src={this.state.beer.image_url}  />
+                <img style={{width:'4rem'}} className="card-img-top" src={this.state.beer.image_url} alt={this.state.beer.name}  />
                 <div className="card-body">
                     <h5 className="card-title">Hi, I am {this.state.beer.name}</h5>
                     <p className="card-text">Tagline: {this.state.beer.tagline} </p>
@@ -34,7 +37,7 @@ class BeerCard extends React.Component{
 
                      </div>
             </div>
-
+            </div>
 
         )
     }

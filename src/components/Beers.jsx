@@ -23,12 +23,24 @@ class Beers extends React.Component{
     render(){
     //   console.log(this.state.beers[0])  
       if(this.state.beers.length === 0) return (<h3>Loading... </h3>)
-        return (<div> 
+        return (<div className="container"> 
         <Header />
-        <h2>Click on the beer's picture to get more Info </h2>
-        
+        <div className="card">
+        <h3 className="card-title">Click on the beer's picture to get more Info ...</h3>
+         
        
-        <div className="container">
+        <table className="table table-hover">
+         <thead className="thead-dark">
+            <tr>
+              
+                <th scope="col">How I look like</th>
+                <th scope="col">My Name is...</th>
+                <th scope="col">My Motto is...</th>
+                <th scope="col">I was invented by...</th>
+            </tr>
+        </thead>
+        <tbody className="container">  
+         
            { this.state.beers.map(beer=>
             <Beer key={beer._id}
             id={beer._id}
@@ -36,10 +48,10 @@ class Beers extends React.Component{
             name={beer.name}
             contributedBy={beer.contributed_by}
             tagline={beer.tagline}  /> )}     
-            </div> 
-             
-       
-
+          
+        </tbody>       
+       </table>
+        </div>
         </div>)
     }
 }

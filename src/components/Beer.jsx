@@ -23,27 +23,19 @@ class Beer extends React.Component{
     if(this.state.beer === null) return (<h1> Loading... </h1>)
     return (
              
-        <div className="row">
-        <div className="col-md">
-       {/* link or route?  */}
-      <Link to={`/beers/${this.props.id}`}>   <img src={this.props.image} style={{width: '25px'}} /> </Link>    
-        </div>
-         <div className="col-md">
-          {this.props.name}
-         </div>
-         <div className="col-md">
-         {this.props.tagline}
-        </div>
-        <div className="col-md">
-        {this.props.contributedBy}
-        </div>
-        
-    
-     </div>   
      
+     
+    <tr>
+     <th scope="row"><Link to={`/beers/${this.props.id}`}>  
+             <img src={this.props.image} alt={this.props.name} style={{width: '25px'}} /> </Link> 
+     </th>
+    <td> {this.props.name}</td>
+    <td> {this.props.tagline}</td>
+    <td>{this.props.contributedBy}</td>
+    </tr>
+  
+
     )
-
-
 
 
    }

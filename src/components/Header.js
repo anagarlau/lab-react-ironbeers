@@ -6,7 +6,7 @@ function Header(){
     return (
     <div>
        
-      <nav className="navbar navbar-dark bg-primary mb-3">
+      <nav className="navbar navbar-dark bg-primary mb-1">
         <div className="container">
         <Link className="navbar-brand" to='/'> Home  </Link>
         </div>

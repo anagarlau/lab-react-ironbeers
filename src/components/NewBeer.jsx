@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-
+import {Link} from 'react-router-dom'
 class NewBeer extends React.Component{
         constructor(props){
             super(props)
@@ -87,8 +87,8 @@ class NewBeer extends React.Component{
                     value={contributed_by}
                     onChange={this.changeHandler}  />
             </div>
-            
-
+        <div>   <Link to={'/beers'}> Go back to beers to see your gem </Link> </div>    
+     
         <button  type="submit">Submit </button>
         </form>)
     }
